@@ -1,6 +1,6 @@
-# Project 3 - *Twitter Part 1*
+# Project 3 - *TwitterClient Part 1*
 
-**Twitter** is a basic twitter app to read your tweets.
+**TwitterClient** is a basic twitter app to read your tweets.
 
 Time spent: **3** hours spent in total
 

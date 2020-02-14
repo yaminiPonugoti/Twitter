@@ -47,7 +47,7 @@ class HomeTableViewController: UITableViewController {
                 self.tableView.reloadData()
                 self.myRefreshControl.endRefreshing()
         }, failure: { (Error) in
-            print("Couldn't retrieve tweets")
+            print("Couldn't retrieve tweets\(Error)")
         })
     }
     
@@ -64,7 +64,7 @@ class HomeTableViewController: UITableViewController {
                 self.tableView.reloadData()
                 self.myRefreshControl.endRefreshing()
         }, failure: { (Error) in
-            print("Couldn't retrieve tweets")
+            print("Couldn't retrieve tweets \(Error)")
         })
     }
     
@@ -97,6 +97,7 @@ class HomeTableViewController: UITableViewController {
         
         cell.setFavourite(tweetArray[indexPath.row]["favorited"] as! Bool)
         cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         
         return cell
     }

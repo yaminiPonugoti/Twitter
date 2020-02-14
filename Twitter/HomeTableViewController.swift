@@ -19,6 +19,8 @@ class HomeTableViewController: UITableViewController {
         //loadTweets()
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 150
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,7 +30,7 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidAppear( _ animated: Bool){
         super.viewDidAppear(animated)
-        loadTweets()
+        self.loadTweets()
     }
     
     @objc func loadTweets(){
@@ -92,6 +94,9 @@ class HomeTableViewController: UITableViewController {
         if let imageData = data{
             cell.tweetImageView.image = UIImage(data: imageData)
         }
+        
+        cell.setFavourite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
         
         return cell
     }

@@ -1,4 +1,4 @@
-# Project 3 - *TwitterClient Part 1*
+# Project 3 - *TwitterClient*
 
 **TwitterClient** is a basic twitter app to view, compose, favorite and retweet tweets.
 
